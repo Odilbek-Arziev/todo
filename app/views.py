@@ -18,13 +18,13 @@ def home(request):
         Todo.objects.create(text=new_todo, is_done=False)
         return redirect("app:home")
 
-    stat = {
+    statistics = {
         "all": todos.count(),
         "finished": todos.filter(is_done=True).count(),
         "open": todos.filter(is_done=False).count(),
     }
 
-    context = {"todos": todos, "stat": stat}
+    context = {"todos": todos, "stat": statistics}
     return render(request, "home.html", context)
 
 
