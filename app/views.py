@@ -4,6 +4,7 @@ from .models import Todo
 
 def home(request):
     todos = Todo.objects.all()
+    print('oops')
     new_todo = request.POST.get("todo")
     todo_pk = request.GET.get("todo")
 
