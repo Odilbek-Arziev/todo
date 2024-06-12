@@ -24,7 +24,7 @@ def home(request):
         "open": todos.filter(is_done=False).count(),
     }
 
-    context = {"todos": todos, "stat": statistics}
+    context = {"todos": todos, "stat": statistics, "Hi_world": "Привет Мир!"}
     return render(request, "home.html", context)
 
 
